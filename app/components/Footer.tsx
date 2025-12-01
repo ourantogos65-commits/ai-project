@@ -91,7 +91,7 @@ export const Footer = () => {
               placeholder="Type here..."
             />
 
-            <Button onClick={callGemini} disabled={loading || !prompt.trim()}>
+            <Button onClick={callGemini} >
               {loading ? 
               <div  className="flex gap-1">
                 <Spinner/>

@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { BsStars } from "react-icons/bs";
 import { HiOutlinePhotograph } from "react-icons/hi";
+import { RiArticleFill } from "react-icons/ri";
 
 export const Steptwo = () => {
   const [uploadedImage, setUploadedImage] = useState<File | null>(null);
@@ -61,8 +62,7 @@ export const Steptwo = () => {
             Describe the food, and AI will detect the ingredients.
           </label>
           <input
-            type="file"
-            accept="image/*"
+            type="text"
             placeholder="Орц тодорхойлох"
             onChange={handleImageUpload}
             className="w-full h-[124px] px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
@@ -83,19 +83,15 @@ export const Steptwo = () => {
           <span>
             <HiOutlinePhotograph />
           </span>
-          Result
+          Identified Ingredients
         </h2>
         <p className="text-gray-400">
-          First, enter your text to generate an image.
+          First, enter your text to recognize an ingredients.{" "}
         </p>
         {uploadedImageUrl && (
           <div className="border rounded-lg p-4">
-            <img
-              src={uploadedImageUrl}
-              alt="Uploaded"
-              className="w-full rounded-lg mb-4"
-            />
-
+            <RiArticleFill  className="w-full rounded-lg mb-4" />
+           
             {detectedObjects.length > 0 && (
               <div className="mt-4 space-y-2">
                 <h3 className="font-semibold text-lg">Detected Objects:</h3>

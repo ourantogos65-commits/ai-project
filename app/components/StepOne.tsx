@@ -9,16 +9,20 @@ export const StepOne = () => {
   const [detectedObjects, setDetectedObjects] = useState<any[]>([]);
   const [analyzing, setAnalyzing] = useState(false);
 
+
+  //zurag bairshuulah
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
       setUploadedImage(file);
-      const url = URL.createObjectURL(file);
+      const url = URL.createObjectURL(file);//browser deer haragduulah url uusgene
       setUploadedImageUrl(url);
       setDetectedObjects([]);
     }
   };
-
+//zurgaa ai ruu ilgeeh analiz hiih 
+//1.form data ashiglah API ruu ilgeeh 
+//2.
   const analyzeImage = async () => {
     if (!uploadedImage) return;
 

@@ -12,13 +12,11 @@ export const POST = async (request: NextRequest) => {
     if (!image) {
       return NextResponse.json({ error: "No name Provider" }, { status: 400 });
     }
-    //Using Faceboock DETR (DEtection Transformer) mode;l for object detection
+
     const results = (await inference.objectDetection({
       model: "facebook/detr-resnet-50",
       data: image,
     })) as any;
-
-    //filter out low confidence detection and format results
 
     const objects = results
       .filter((obj: any) => obj.score > 0.5)
